@@ -1,5 +1,7 @@
-package com.olkoro.demo;
+package com.olkoro.demo.rest;
 
+import com.olkoro.demo.model.User;
+import com.olkoro.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 

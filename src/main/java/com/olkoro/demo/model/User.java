@@ -1,8 +1,12 @@
-package com.olkoro.demo;
+package com.olkoro.demo.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -27,6 +31,4 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-    // Далее конструктор по умолчанию, геттеры и сеттеры
-    // Или можете использовать Lombok
 }

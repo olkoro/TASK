@@ -8,6 +8,8 @@ group = 'com.olkoro'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+def lombokVersion = '1.18.10'
+
 repositories {
 	mavenCentral()
 }
@@ -17,6 +19,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.liquibase:liquibase-core'
 	runtimeOnly 'mysql:mysql-connector-java'
+	compileOnly group: 'org.projectlombok',
+			name: 'lombok',
+			version: lombokVersion
+	annotationProcessor group: 'org.projectlombok',
+			name: 'lombok',
+			version: lombokVersion
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

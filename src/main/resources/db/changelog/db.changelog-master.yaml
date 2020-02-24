@@ -34,3 +34,47 @@ databaseChangeLog:
               - column:
                   name: email
                   type: varchar(50)
+
+  - changeSet:
+      id: 2
+      author: your_liquibase_username
+      comment: "Create admin user"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "admin"
+              - column:
+                  name: password
+                  value: "admin"
+              - column:
+                  name: email
+                  value: "admin@server.com"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "guest"
+              - column:
+                  name: password
+                  value: "guest"
+              - column:
+                  name: email
+                  value: "guest@server.com"
+      rollback:
+        - delete:
+            tableName: users
+            where: username in ('admin', 'guest')
+
+  - include:
+      file: db.changelog-one.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: db.changelog-two.yaml
+      relativeToChangelogFile: true
+  - include:
+        file: db.changelog-three.yaml
+        relativeToChangelogFile: true

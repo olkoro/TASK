@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-two.yaml
+  - changeSet:
+      id: 6
+      author: oleg
+      comment: "add data to master table"
+      changes:
+        - insert:
+            tableName: master
+            columns:
+              - column:
+                  name: first_name
+                  value: "Julia"
+              - column:
+                  name: last_name
+                  value: "Lastnamova"
+              - column:
+                  name: email
+                  value: "admin@server.com"
+              - column:
+                  name: phone
+                  value: "+372559584"
+  - changeSet:
+      id: 7
+      author: oleg
+      comment: "add data to client table"
+      changes:
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: name
+                  value: "oleg"
+              - column:
+                  name: phone
+                  value: "+372 5534343434"
