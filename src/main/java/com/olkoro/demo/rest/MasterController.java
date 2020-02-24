@@ -3,6 +3,7 @@ package com.olkoro.demo.rest;
 import com.olkoro.demo.model.Master;
 import com.olkoro.demo.repository.MasterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,10 @@ public class MasterController {
         this.masterRepository = masterRepository;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/masters/all")
     public List<Master> allMasters() {
+
         return masterRepository.findAll();
     }
 
