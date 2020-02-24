@@ -78,3 +78,6 @@ databaseChangeLog:
   - include:
         file: db.changelog-three.yaml
         relativeToChangelogFile: true
+  - include:
+        file: db.changelog-4.yaml
+        relativeToChangelogFile: true
