@@ -17,17 +17,22 @@ public class ReservationController {
         this.reservationRepository = reservationRepository;
     }
 
-    @GetMapping("/reservation/all")
+    @GetMapping("/reservations/all")
     public List<Reservation> allReservations() {
         return reservationRepository.findAll();
     }
 
-    @PostMapping("/reservation/")
+    @GetMapping("/reservations/{id}")
+    public Reservation getReservation(@PathVariable Long id){
+        return reservationRepository.getOne(id);
+    }
+
+    @PostMapping("/reservations/")
     public Reservation PostReservation(@RequestBody Reservation reservation){
         return reservationRepository.save(reservation);
     }
 
-    @DeleteMapping ("reservation/{id}")
+    @DeleteMapping ("/reservations/{id}")
     public void deleteOrder(@PathVariable Long id) {
         reservationRepository.delete(reservationRepository.getOne(id));
     }

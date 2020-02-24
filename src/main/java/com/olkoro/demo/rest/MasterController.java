@@ -18,7 +18,7 @@ public class MasterController {
         this.masterRepository = masterRepository;
     }
 
-    @GetMapping("/master/all")
+    @GetMapping("/masters/all")
     public List<Master> allMasters() {
         return masterRepository.findAll();
     }
