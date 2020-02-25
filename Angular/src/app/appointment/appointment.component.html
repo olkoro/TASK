@@ -1,0 +1,12 @@
+<p>Make an apontment</p>
+<form>
+Your name: <br>
+    <input class="form-control" [(ngModel)]="name" placeholder = "name" /> <br>
+Your phone number:<br>
+    <input class="form-control" [(ngModel)]="phone" placeholder = "phone number" /> <br>
+Choose your master:<br>
+<select [(ngModel)]="masterId" >
+    <option *ngFor="let m of httpdata" value="{{m.id}}" > {{m.firstName}} {{m.lastName}}</option>
+</select><br>
+    <button class="btn btn-default" (click)="addReservation()">Make an appointment</button>
+</form>

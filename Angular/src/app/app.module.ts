@@ -1,14 +1,14 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { AppComponent }   from './app.component';
 import { MasterComponent } from './master/master.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-    declarations: [ AppComponent, MasterComponent ],
-    bootstrap:    [ AppComponent, MasterComponent ]
+    declarations: [ MasterComponent, AppointmentComponent ],
+    bootstrap:    [ MasterComponent, AppointmentComponent ]
 })
 export class AppModule { }
