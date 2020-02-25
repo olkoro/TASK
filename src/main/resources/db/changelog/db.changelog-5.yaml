@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-5.yaml
+  - changeSet:
+      id: 9
+      author: oleg
+      comment: "Create service table"
+      changes:
+        - createTable:
+            tableName: service
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: description
+                  type: varchar(500)
+  - changeSet:
+      id: 10
+      author: oleg
+      comment: "Create master_service table"
+      changes:
+        - createTable:
+            tableName: master_service
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: master_id
+                  type: BIGINT
+              - column:
+                  name: service_id
+                  type: BIGINT

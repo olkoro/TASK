@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +30,11 @@ public class Master {
 
     @Column(name = "phone")
     private String phone;
+
+    @ManyToMany
+    @JoinTable(
+            name = "master_service",
+            joinColumns = @JoinColumn(name = "master_id"),
+            inverseJoinColumns = @JoinColumn(name = "service_id"))
+    private List<Service> services;
 }

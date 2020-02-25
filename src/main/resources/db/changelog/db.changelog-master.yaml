@@ -81,3 +81,6 @@ databaseChangeLog:
   - include:
         file: db.changelog-4.yaml
         relativeToChangelogFile: true
+  - include:
+        file: db.changelog-5.yaml
+        relativeToChangelogFile: true
