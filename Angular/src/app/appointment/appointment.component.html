@@ -1,4 +1,4 @@
-<p>Make an apontment</p>
+<p>Make an appontment</p>
 <form>
 Your name: <br>
     <input class="form-control" [(ngModel)]="name" placeholder = "name" /> <br>
@@ -8,5 +8,8 @@ Choose your master:<br>
 <select [(ngModel)]="masterId" >
     <option *ngFor="let m of httpdata" value="{{m.id}}" > {{m.firstName}} {{m.lastName}}</option>
 </select><br>
+    Choose time:<br>
+    <input id="datetime" type="datetime-local" [(ngModel)]="time" placeholder="yyyy-mm-dd">
+    <br>
     <button class="btn btn-default" (click)="addReservation()">Make an appointment</button>
 </form>

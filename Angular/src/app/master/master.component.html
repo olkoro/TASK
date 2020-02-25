@@ -1,15 +1,19 @@
-
+Our Masters:
 <div>
     <table id="table">
         <tr>
             <td>Name</td>
             <td>Last Name</td>
             <td>Phone</td>
+            <td>Email</td>
+            <td>Services</td>
         </tr>
         <tr *ngFor = "let data of httpdata">
             <td>{{data.firstName}}</td>
             <td>{{data.lastName}}</td>
             <td>{{data.phone}}</td>
+            <td>{{data.email}}</td>
+            <td *ngFor = "let s of data.services">{{s.name}}.</td>
         </tr>
     </table>
 </div>

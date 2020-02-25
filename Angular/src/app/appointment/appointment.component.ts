@@ -26,6 +26,7 @@ export class AppointmentComponent implements OnInit {
   name: string;
   phone: string;
   masterId: number;
+  time: string;
   httpdata;
 
   constructor(private http: HttpClient) {}
@@ -37,6 +38,6 @@ export class AppointmentComponent implements OnInit {
     displaydata(data) {this.httpdata = data; console.log(data); }
 
   addReservation(): void {
-
+    console.log("log")
       }
 }
