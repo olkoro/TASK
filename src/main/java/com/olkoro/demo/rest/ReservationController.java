@@ -27,7 +27,8 @@ public class ReservationController {
         return reservationRepository.getOne(id);
     }
 
-    @PostMapping("/reservations/")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/reservations")
     public Reservation PostReservation(@RequestBody Reservation reservation){
         return reservationRepository.save(reservation);
     }

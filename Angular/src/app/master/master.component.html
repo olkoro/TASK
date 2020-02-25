@@ -1,7 +1,7 @@
-Our Masters:
-<div>
-    <table id="table">
-        <tr>
+<div class="center">
+    <p>Our masters:</p>
+    <table class="table">
+        <tr class="header">
             <td>Name</td>
             <td>Last Name</td>
             <td>Phone</td>
@@ -13,7 +13,7 @@ Our Masters:
             <td>{{data.lastName}}</td>
             <td>{{data.phone}}</td>
             <td>{{data.email}}</td>
-            <td *ngFor = "let s of data.services">{{s.name}}.</td>
+            <td><span *ngFor = "let s of data.services">{{s.name}}. </span></td>
         </tr>
     </table>
 </div>

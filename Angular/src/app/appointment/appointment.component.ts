@@ -3,17 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
 
-class Master{
-    id: number;
-    firstName: string;
-    lastName: string;
-    phone: string;
+class Reservation{
+    clientId: number;
+    masterId: number;
+    timeStart: string;
 
-    constructor(firstName: string, lastName: string, phone: string) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phone = phone;
+    constructor(clientId: number, masterId: number, timeStart: string) {
+        this.clientId = clientId;
+        this.masterId = masterId;
+        this.timeStart = timeStart;
     }
 }
 
@@ -37,7 +35,9 @@ export class AppointmentComponent implements OnInit {
       }
     displaydata(data) {this.httpdata = data; console.log(data); }
 
-  addReservation(): void {
-    console.log("log")
+    addReservation(): void {
+      this.http.post('http://localhost:8080/reservations', new Reservation(1, this.masterId, this.time)).pipe(map((response) => response)).
+      subscribe((data) => {console.log(data);});
+      window.location.reload();
       }
 }

@@ -1,15 +1,16 @@
-<p>Make an appontment</p>
-<form>
-Your name: <br>
+<div class="center">
+    <p style="color: dodgerblue"><b>Make an appointment!</b></p>
+    <p>Your name:</p>
     <input class="form-control" [(ngModel)]="name" placeholder = "name" /> <br>
-Your phone number:<br>
+    <p>Your phone number:</p>
     <input class="form-control" [(ngModel)]="phone" placeholder = "phone number" /> <br>
-Choose your master:<br>
+    <p>Choose your master:</p>
 <select [(ngModel)]="masterId" >
     <option *ngFor="let m of httpdata" value="{{m.id}}" > {{m.firstName}} {{m.lastName}}</option>
 </select><br>
-    Choose time:<br>
+    <p>Choose time:</p>
     <input id="datetime" type="datetime-local" [(ngModel)]="time" placeholder="yyyy-mm-dd">
+    <br><br>
+    <button class="button" (click)="addReservation()">Make an appointment</button>
     <br>
-    <button class="btn btn-default" (click)="addReservation()">Make an appointment</button>
-</form>
+</div>

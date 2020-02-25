@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-6.yaml
+  - changeSet:
+      id: 11
+      author: oleg
+      comment: "Create work_hours table"
+      changes:
+        - createTable:
+            tableName: work_hours
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: master_id
+                  type: BIGINT
+              - column:
+                  name: weekday
+                  type: varchar(50)
+              - column:
+                  name: start_time
+                  type: varchar(100)
+              - column:
+                  name: end_time
+                  type: varchar(100)
+  - changeSet:
+      id: 10
+      author: oleg
+      comment: "Create price table"
+      changes:
+        - createTable:
+            tableName: price
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: value
+                  type: varchar(50)
+              - column:
+                  name: service_id
+                  type: BIGINT
+              - column:
+                  name: master_id
+                  type: BIGINT
