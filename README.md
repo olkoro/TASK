@@ -1,4 +1,4 @@
-# TASK
+# How to execute
 This instruction will guide you how to run this application with IntelliJ IDEA. 
 
 ### Lombok plugin must be installed in IntelliJ IDEA and enabled in "Preferences | Build, Execution, Deployment | Compiler | Annotation Processors" or otherwise data won't save and won't display!
