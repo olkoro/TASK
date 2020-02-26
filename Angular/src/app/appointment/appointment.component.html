@@ -8,8 +8,10 @@
 <select [(ngModel)]="masterId" >
     <option *ngFor="let m of httpdata" value="{{m.id}}" > {{m.firstName}} {{m.lastName}}</option>
 </select><br>
+    <p>Choose date:</p>
+    <input id="date" type="date" [(ngModel)]="date" placeholder="yyyy-mm-dd">
     <p>Choose time:</p>
-    <input id="datetime" type="datetime-local" [(ngModel)]="time" placeholder="yyyy-mm-dd">
+    <input id="time" type="time" [(ngModel)]="time" placeholder="HH-MM">
     <br><br>
     <button class="button" (click)="addReservation()">Make an appointment</button>
     <br>

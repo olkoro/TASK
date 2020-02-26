@@ -1,0 +1,145 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-2.yaml
+  - changeSet:
+      id: 13
+      author: oleg
+      comment: "add data to master table"
+      changes:
+        - insert:
+            tableName: master
+            columns:
+              - column:
+                  name: first_name
+                  value: "Maria"
+              - column:
+                  name: last_name
+                  value: "Surnamova"
+              - column:
+                  name: email
+                  value: "mod@server.com"
+              - column:
+                  name: phone
+                  value: "+3728800333"
+  - changeSet:
+      id: 14
+      author: oleg
+      comment: "add data to master table"
+      changes:
+        - insert:
+            tableName: master
+            columns:
+              - column:
+                  name: first_name
+                  value: "Mark"
+              - column:
+                  name: last_name
+                  value: "Brown"
+              - column:
+                  name: email
+                  value: "mark@server.com"
+              - column:
+                  name: phone
+                  value: "+3725550333"
+  - changeSet:
+      id: 15
+      author: oleg
+      comment: "add data to service table"
+      changes:
+        - insert:
+            tableName: service
+            columns:
+              - column:
+                  name: name
+                  value: "Male haircut"
+  - changeSet:
+      id: 16
+      author: oleg
+      comment: "add data to service table"
+      changes:
+        - insert:
+            tableName: service
+            columns:
+              - column:
+                  name: name
+                  value: "Female haircut"
+  - changeSet:
+      id: 17
+      author: oleg
+      comment: "add data to service table"
+      changes:
+        - insert:
+            tableName: service
+            columns:
+              - column:
+                  name: name
+                  value: "Hair coloring"
+  - changeSet:
+      id: 18
+      author: oleg
+      comment: "add data to master_service table"
+      changes:
+        - insert:
+            tableName: master_service
+            columns:
+              - column:
+                  name: master_id
+                  value: 1
+              - column:
+                  name: service_id
+                  value: 1
+  - changeSet:
+      id: 19
+      author: oleg
+      comment: "add data to master_service table"
+      changes:
+        - insert:
+            tableName: master_service
+            columns:
+              - column:
+                  name: master_id
+                  value: 1
+              - column:
+                  name: service_id
+                  value: 2
+  - changeSet:
+      id: 20
+      author: oleg
+      comment: "add data to master_service table"
+      changes:
+        - insert:
+            tableName: master_service
+            columns:
+              - column:
+                  name: master_id
+                  value: 1
+              - column:
+                  name: service_id
+                  value: 3
+  - changeSet:
+      id: 21
+      author: oleg
+      comment: "add data to master_service table"
+      changes:
+        - insert:
+            tableName: master_service
+            columns:
+              - column:
+                  name: master_id
+                  value: 3
+              - column:
+                  name: service_id
+                  value: 1
+  - changeSet:
+      id: 22
+      author: oleg
+      comment: "add data to master_service table"
+      changes:
+        - insert:
+            tableName: master_service
+            columns:
+              - column:
+                  name: master_id
+                  value: 2
+              - column:
+                  name: service_id
+                  value: 3

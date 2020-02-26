@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 @Data
@@ -23,10 +24,16 @@ public class Reservation {
     @Column(name = "master_id")
     private Long masterId;
 
-    @Column(name = "client_id")
-    private Long clientId;
+    @Column(name = "client_name")
+    private String clientName;
 
-    @Column(name = "time_start")
-    private Date timeStart;
+    @Column(name = "client_phone")
+    private String clientPhone;
+
+    @Column(name = "time")
+    private Time time;
+
+    @Column(name = "date")
+    private Date date;
 
 }

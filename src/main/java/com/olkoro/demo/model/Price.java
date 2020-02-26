@@ -25,5 +25,5 @@ public class Price {
     private Long serviceId;
 
     @Column(name = "value")
-    private String value;
+    private double value;
 }

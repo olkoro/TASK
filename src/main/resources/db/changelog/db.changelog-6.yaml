@@ -28,7 +28,7 @@ databaseChangeLog:
                   name: end_time
                   type: varchar(100)
   - changeSet:
-      id: 10
+      id: 12
       author: oleg
       comment: "Create price table"
       changes:
@@ -44,7 +44,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: value
-                  type: varchar(50)
+                  type: DECIMAL(7,2)
               - column:
                   name: service_id
                   type: BIGINT

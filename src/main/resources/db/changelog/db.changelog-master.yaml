@@ -2,7 +2,7 @@ databaseChangeLog:
   - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
   - changeSet:
       id: 1
-      author: your_liquibase_username
+      author: oleg
       changes:
         - createTable:
             tableName: users
@@ -70,13 +70,13 @@ databaseChangeLog:
             where: username in ('admin', 'guest')
 
   - include:
-      file: db.changelog-one.yaml
+      file: db.changelog-1.yaml
       relativeToChangelogFile: true
   - include:
-      file: db.changelog-two.yaml
+      file: db.changelog-2.yaml
       relativeToChangelogFile: true
   - include:
-        file: db.changelog-three.yaml
+        file: db.changelog-3.yaml
         relativeToChangelogFile: true
   - include:
         file: db.changelog-4.yaml
@@ -86,4 +86,7 @@ databaseChangeLog:
         relativeToChangelogFile: true
   - include:
         file: db.changelog-6.yaml
+        relativeToChangelogFile: true
+  - include:
+        file: db.changelog-7.yaml
         relativeToChangelogFile: true

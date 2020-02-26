@@ -4,14 +4,18 @@ import { map } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
 
 class Reservation{
-    clientId: number;
+    clientName: number;
+    clientPhone: number;
     masterId: number;
-    timeStart: string;
+    date: string;
+    time: string;
 
-    constructor(clientId: number, masterId: number, timeStart: string) {
-        this.clientId = clientId;
+    constructor(clientName, clientPhone,masterId,date,time) {
+        this.clientName = clientName;
+        this.clientPhone = clientPhone;
         this.masterId = masterId;
-        this.timeStart = timeStart;
+        this.date = date;
+        this.time = time;
     }
 }
 
@@ -24,6 +28,7 @@ export class AppointmentComponent implements OnInit {
   name: string;
   phone: string;
   masterId: number;
+  date: string;
   time: string;
   httpdata;
 
@@ -36,7 +41,8 @@ export class AppointmentComponent implements OnInit {
     displaydata(data) {this.httpdata = data; console.log(data); }
 
     addReservation(): void {
-      this.http.post('http://localhost:8080/reservations', new Reservation(1, this.masterId, this.time)).pipe(map((response) => response)).
+      this.time = this.time + ":00";
+      this.http.post('http://localhost:8080/reservations', new Reservation(this.name,this.phone,this.masterId,this.date,this.time)).pipe(map((response) => response)).
       subscribe((data) => {console.log(data);});
       window.location.reload();
       }

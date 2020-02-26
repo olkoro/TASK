@@ -19,8 +19,14 @@ databaseChangeLog:
                   name: master_id
                   type: BIGINT
               - column:
-                  name: client_id
-                  type: BIGINT
+                  name: client_name
+                  type: varchar(50)
               - column:
-                  name: time_start
+                  name: client_phone
+                  type: varchar(50)
+              - column:
+                  name: date
                   type: DATETIME
+              - column:
+                  name: time
+                  type: TIME

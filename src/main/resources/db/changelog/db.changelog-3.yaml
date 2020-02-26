@@ -1,5 +1,5 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-two.yaml
+  - logicalFilePath: db/changelog/db.changelog-3.yaml
   - changeSet:
       id: 6
       author: oleg
